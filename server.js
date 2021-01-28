@@ -62,6 +62,15 @@ app.get("/products", (req,res) => {
     })
 });
 
+app.get("/products/best", (req,res) => {
+    data_product.getBest().then((data)=>{
+        res.json(data);
+    })
+    .catch((err)=>{
+        res.json({message: `Server throws, error: : ${err}`});
+    })
+});
+
 app.get("/api/categories", (req,res)=>{
     data.getCategories().then((data)=>{
         res.json(data);

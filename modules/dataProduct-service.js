@@ -66,6 +66,15 @@ module.exports = function(mongoDBConnectionString){
                 });
             });
         },
+        getBest: function(){
+            return new Promise((resolve,reject)=>{
+                Product.find({"best":true}).exec().then(Products=>{
+                    resolve(Products)
+                }).catch(err=>{
+                    reject(err);
+                });
+            });
+        },
         getCategories: function(){
             return new Promise((resolve,reject)=>{
                                
