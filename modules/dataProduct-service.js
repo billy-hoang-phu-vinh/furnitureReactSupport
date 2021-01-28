@@ -59,7 +59,7 @@ module.exports = function(mongoDBConnectionString){
         // get all product
         getAll: function(){
             return new Promise((resolve,reject)=>{
-                Product.find(filter).exec().then(Products=>{
+                Product.find().exec().then(Products=>{
                     resolve(Products)
                 }).catch(err=>{
                     reject(err);
