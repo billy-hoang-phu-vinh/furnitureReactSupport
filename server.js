@@ -52,6 +52,15 @@ app.get("/api/posts", (req,res) => {
         res.json({message: `Server throws, error: : ${err}`});
     })
 });
+// get all furni product
+app.get("/products", (req,res) => {
+    data_product.getAll().then((data)=>{
+        res.json(data);
+    })
+    .catch((err)=>{
+        res.json({message: `Server throws, error: : ${err}`});
+    })
+});
 
 app.get("/api/categories", (req,res)=>{
     data.getCategories().then((data)=>{
